@@ -1,0 +1,6 @@
+MATCH (o:Entity {EntityType: 'Application'})
+OPTIONAL MATCH (e:Event) -[:CORR]-> (o)
+WHERE e.Activity = "A_Submitted"
+WITH o, COUNT(e) AS eventCount
+WHERE eventCount <> 1
+RETURN COUNT(o) AS violationCount

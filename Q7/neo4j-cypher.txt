@@ -1,0 +1,3 @@
+MATCH (e2:Event {Activity: 'O_Created'}) -[:CORR]-> (o2:Entity {EntityType: 'Offer'}) -[:REL]-> (o1:Entity {EntityType: 'Application'})
+MATCH (o1)  <-[:REL]- (o3:Entity {EntityType: 'Offer'}) <-[:CORR]- (e3:Event {Activity: 'O_Created'})
+RETURN COUNT(*)

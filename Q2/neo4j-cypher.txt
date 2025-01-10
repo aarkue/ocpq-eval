@@ -1,0 +1,7 @@
+MATCH (e:Event)
+WHERE e.Activity = "O_Created"
+OPTIONAL MATCH (e) -[:DF*{EntityType: 'Offer'}]-> (e2:Event)
+WHERE e2.Activity = "O_Returned"
+WITH e, COUNT(e2) AS eventCount
+WHERE eventCount < 1
+RETURN COUNT(e) AS violationCount

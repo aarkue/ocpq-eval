@@ -1,0 +1,6 @@
+MATCH (o1:Entity {EntityType: 'Application'}) <-[:CORR]- (e1:Event {Activity: 'A_Accepted'})
+OPTIONAL MATCH (e2:Event {Activity: 'O_Accepted'}) -[:CORR]-> (o2:Entity {EntityType: 'Offer'}) -[:REL]-> (o1)
+WHERE e1.timestamp <= e2.timestamp
+WITH o1, COUNT(e2) as e2_c, COUNT(o2) AS o2_c
+WHERE e2_c < 1 OR o2_c < 1
+RETURN COUNT(o1) AS violationCount

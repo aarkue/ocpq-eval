@@ -1,0 +1,14 @@
+MATCH (e1:Event) −[:CORR] −> (o: Entity {EntityType : 'Offer'}) <−[:CORR] − (e2:Event)
+ WHERE e1.Activity = "O_Created" and e2.Activity = "O_Accepted"
+ WITH duration.between(e1.timestamp,e2.timestamp) AS time, e1.timestamp as t1, e2.timestamp as t2
+ ORDER BY time DESC
+ LIMIT 1
+ RETURN duration.inSeconds(t1,t2).seconds
+
+// Also possible, but does not yield number of seconds (instead has year, day and second components)
+// MATCH (e1:Event) −[:CORR] −> (o: Entity {EntityType : 'Offer'}) <−[:CORR] − (e2:Event)
+//  WHERE e1.Activity = "O_Created" and e2.Activity = "O_Accepted"
+//  WITH duration.between(e1.timestamp,e2.timestamp) AS time
+//  ORDER BY time DESC
+//  LIMIT 1
+//  RETURN time

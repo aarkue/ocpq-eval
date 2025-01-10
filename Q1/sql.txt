@@ -1,0 +1,24 @@
+SELECT COUNT(*)
+FROM (SELECT DISTINCT A1.ocel_id
+FROM object_Application AS A1
+LEFT JOIN event_object AS E2O
+    ON E2O.ocel_object_id = A1.ocel_id
+LEFT JOIN event_A_Submitted AS E1
+    ON E2O.ocel_event_id = E1.ocel_id
+GROUP BY A1.ocel_id
+HAVING COUNT(E1.ocel_id) <> 1);
+
+
+-- Performing slightly worse:
+-- SELECT COUNT(*)
+-- FROM (
+--     SELECT A1.ocel_id,
+--            (SELECT COUNT(*)
+--             FROM event_object AS E2O
+--             INNER JOIN event_A_Submitted AS E1
+--             ON E2O.ocel_event_id = E1.ocel_id
+--             WHERE E2O.ocel_object_id = A1.ocel_id) AS returned_count
+--     FROM object_Application AS A1
+--     GROUP BY A1.ocel_id
+--     HAVING returned_count <> 1
+-- ) AS result;

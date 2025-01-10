@@ -1,0 +1,46 @@
+SELECT MAX(duration_seconds) from (
+SELECT
+    (strftime('%s', E2.ocel_time) - strftime('%s', E1.ocel_time)) AS duration_seconds
+FROM event_object AS E2O
+INNER JOIN object_Offer AS A1
+    ON E2O.ocel_object_id = A1.ocel_id
+INNER JOIN event_O_Created AS E1
+    ON E2O.ocel_event_id = E1.ocel_id
+INNER JOIN event_object AS E2O2
+    ON E2O2.ocel_object_id = A1.ocel_id
+INNER JOIN event_O_Accepted AS E2
+    ON E2O2.ocel_event_id = E2.ocel_id
+-- LIMIT 500
+);
+
+
+-- Assuming there is a time_sec field available:
+-- 
+-- SELECT MAX(duration_seconds) from (
+-- SELECT
+--     (E2.time_sec - E1.time_sec) AS duration_seconds
+-- FROM event_object AS E2O
+-- INNER JOIN object_Offer AS A1
+--     ON E2O.ocel_object_id = A1.ocel_id
+-- INNER JOIN event_O_Created AS E1
+--     ON E2O.ocel_event_id = E1.ocel_id
+-- INNER JOIN event_object AS E2O2
+--     ON E2O2.ocel_object_id = A1.ocel_id
+-- INNER JOIN event_O_Accepted AS E2
+--     ON E2O2.ocel_event_id = E2.ocel_id
+-- -- LIMIT 500
+-- );
+
+
+
+--  This query (simply counting) already takes 338424ms
+-- SELECT COUNT(*)
+-- FROM object_Offer AS A1
+-- INNER JOIN event_object AS E2O2
+--     ON E2O2.ocel_object_id = A1.ocel_id
+-- INNER JOIN event_O_Accepted AS E2
+--     ON E2O2.ocel_event_id = E2.ocel_id
+-- INNER JOIN event_object AS E2O
+--     ON E2O.ocel_object_id = A1.ocel_id
+-- INNER JOIN event_O_Created AS E1
+--     ON E2O.ocel_event_id = E1.ocel_id

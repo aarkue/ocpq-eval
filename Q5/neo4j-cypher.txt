@@ -1,0 +1,6 @@
+MATCH (o1:Entity {EntityType: 'Application'}) <-[:CORR]- (e1:Event {Activity: 'A_Accepted'}) -[:CORR]-> (o2:Entity {EntityType: 'Case_R'})
+OPTIONAL MATCH (e2:Event {Activity: 'O_Created'}) -[:CORR]-> (o3:Entity {EntityType: 'Offer'}) -[:REL]-> (o1)
+WHERE NOT (e2) -[:CORR]-> (o2)
+WITH o1, COUNT(e2) as e2_c, COUNT(o3) AS o3_c
+WHERE e2_c >= 1 OR o3_c >= 1
+RETURN COUNT(*) AS violationCount
