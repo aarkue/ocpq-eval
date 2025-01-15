@@ -1,0 +1,2 @@
+bpic2017-o2o-workflow-qualifier.json.zip filter=lfs diff=lfs merge=lfs -text
+bpic2017-o2o-workflow-qualifier-index.sqlite.zip filter=lfs diff=lfs merge=lfs -text
