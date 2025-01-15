@@ -15,6 +15,9 @@ The used files (OCEL 2.0 in JSON and SQLite format) are available for download a
 
 Below, the query/constraint formulations in the graphical approaches are included.
 For SQL (SQLite) and Cypher (Neo4J), see the `sql.txt` and `neo4j-cypher.txt` files available in each subdirectory (Q1 - Q7).
+The exported versions of the queries/constraints in OCPQ are also available (e.g., as `Q1.json` for usage in frontend, simply copy the text content and paste using alt+v in the OCPQ tool).
+We also included all raw measurements as .json files, containing the measured durations in seconds.
+
 ## Q1
 ### DECLARE
 ![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/Q1/DECLARE.drawio.svg)
