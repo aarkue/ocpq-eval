@@ -14,8 +14,11 @@ The Neo4J dump, is available [here](https://data.4tu.nl/datasets/5c9717a0-4c22-4
 
 
 ## Results
-![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/heatmap.svg)
+![](./heatmap.svg)
 
+
+Note, that a previous version of this repository used a different evaluation approach, and the SQLite durations where measured individually. In the current version, `sqlite3` from Python is used.
+Moreover, the SQL queries were different, and updated ones (also compatible with DuckDB) were used for the newest evaluation results.
 
 
 Below, the query/constraint formulations in the graphical approaches are included.
@@ -25,57 +28,57 @@ We also included all raw measurements as .json files, containing the measured du
 
 ## Q1
 ### DECLARE
-![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/Q1/DECLARE.drawio.svg)
+![](./Q1/DECLARE.drawio.svg)
 
 ### OCBC
-![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/Q1/OCBC.drawio.svg)
+![](./Q1/OCBC.drawio.svg)
 
 ### **_OCPQ_**
-![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/Q1/Q1.png)
+![](./Q1/Q1.png)
 
 
 ## Q2
 ### DECLARE
-![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/Q2/DECLARE.drawio.svg)
+![](./Q2/DECLARE.drawio.svg)
 
 ### OCCG
-![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/Q2/OCCG.drawio.svg)
+![](./Q2/OCCG.drawio.svg)
 
 ### OCBC
-![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/Q2/OCBC.drawio.svg)
+![](./Q2/OCBC.drawio.svg)
 
 ### **_OCPQ_**
-![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/Q2/Q2.png)
+![](./Q2/Q2.png)
 
 ## Q3
 
 ### OCCG
-![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/Q3/OCCG.drawio.svg)
+![](./Q3/OCCG.drawio.svg)
 ### OCBC
-![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/Q3/OCBC.drawio.svg)
+![](./Q3/OCBC.drawio.svg)
 ### **_OCPQ_**
-![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/Q3/Q3.png)
+![](./Q3/Q3.png)
 
 ## Q4
 
 ### OCBC
-![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/Q4/OCBC.drawio.svg)
+![](./Q4/OCBC.drawio.svg)
 
 ### **_OCPQ_**
-![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/Q4/Q4.png)
+![](./Q4/Q4.png)
 
 ## Q5
 ### **_OCPQ_**
-![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/Q5/Q5.png)
+![](./Q5/Q5.png)
 
 
 
 ## Q6
 ### **_OCPQ_**
-![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/Q6/Q6.png)
+![](./Q6/Q6.png)
 
 
 
 ## Q7
 ### **_OCPQ_**
-![](https://raw.githubusercontent.com/aarkue/ocpq-eval/refs/heads/main/Q7/Q7.png)
+![](./Q7/Q7.png)
