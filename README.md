@@ -10,7 +10,7 @@ The evaluation was performed on an OCEL 2.0 file based on the BPI Challenge 2017
 
 
 The used files (OCEL 2.0 in JSON and SQLite format) are available for download as `./bpic2017-ocel2.zip` (OCEL 2.0 JSON), `./bpic2017.sqlite.zip`, and `./bpic2017.duckdb.zip` in this repository.
-The Neo4J dump, is available [here](https://data.4tu.nl/datasets/5c9717a0-4c22-4b78-a3ad-d2234208bfd7/1).
+The Neo4j dump, is available [here](https://data.4tu.nl/datasets/5c9717a0-4c22-4b78-a3ad-d2234208bfd7/1).
 
 
 ## Results
@@ -22,7 +22,7 @@ Moreover, the SQL queries were different, and updated ones (also compatible with
 
 
 Below, the query/constraint formulations in the graphical approaches are included.
-For SQL (SQLite) and Cypher (Neo4J), see the `sql.txt` and `neo4j-cypher.txt` files available in each subdirectory (Q1 - Q7).
+For SQL (SQLite) and Cypher (Neo4j), see the `sql.txt` and `neo4j-cypher.txt` files available in each subdirectory (Q1 - Q7).
 The exported versions of the queries/constraints in OCPQ are also available (e.g., as `Q1.json` for usage in frontend, simply copy the text content and paste using alt+v in the OCPQ tool).
 We also included all raw measurements as .json files, containing the measured durations in seconds.
 
