@@ -9,7 +9,7 @@ We tested our implementation by running the backend web server in release mode.
 The evaluation was performed on an OCEL 2.0 file based on the BPI Challenge 2017 (see https://data.4tu.nl/datasets/34c3f44b-3101-4ea9-8281-e38905c68b8d/1 and https://data.4tu.nl/datasets/5c9717a0-4c22-4b78-a3ad-d2234208bfd7/1 as well as https://data.4tu.nl/datasets/6889ca3f-97cf-459a-b630-3b0b0d8664b5/1).
 
 
-The used files (OCEL 2.0 in JSON and SQLite format) are available for download as `bpic2017-o2o-workflow-qualifier.json.zip` and `bpic2017-o2o-workflow-qualifier-index.sqlite.zip` in the repository root.
+The used files (OCEL 2.0 in JSON and SQLite format) are available for download as `./bpic2017-ocel2.zip` (OCEL 2.0 JSON), `./bpic2017.sqlite.zip`, and `./bpic2017.duckdb.zip` in this repository.
 The Neo4J dump, is available [here](https://data.4tu.nl/datasets/5c9717a0-4c22-4b78-a3ad-d2234208bfd7/1).
 
 
