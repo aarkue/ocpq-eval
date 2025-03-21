@@ -1,16 +1,16 @@
-SELECT COUNT(*)
-FROM (
-    SELECT A1.ocel_id, E1.ocel_id,
-           (SELECT COUNT(*)
-            FROM event_object AS E2O2
-            INNER JOIN event_O_Returned AS E2
-            ON E2O2.ocel_event_id = E2.ocel_id
-            WHERE E2O2.ocel_object_id = A1.ocel_id AND E2.ocel_time >= E1.ocel_time) AS returned_count
-    FROM object_Offer AS A1
-    INNER JOIN event_object AS E2O
-        ON E2O.ocel_object_id = A1.ocel_id
-    INNER JOIN event_O_Created AS E1
-        ON E2O.ocel_event_id = E1.ocel_id
-    GROUP BY A1.ocel_id, E1.ocel_id
-    HAVING returned_count >= 1
-) AS result;
+SELECT
+    A1.ocel_id,
+    E1.ocel_id,
+    (
+        SELECT
+            COUNT(*)
+        FROM
+            event_O_Returned AS X
+            INNER JOIN event_object as XE2O ON XE2O.ocel_event_id = X.ocel_id
+        WHERE
+            XE2O.ocel_object_id = A1.ocel_id
+    ) >= 1 as satisfied
+FROM
+    object_Offer AS A1
+    INNER JOIN event_object AS E2O ON E2O.ocel_object_id = A1.ocel_id
+    INNER JOIN event_O_Created AS E1 ON E2O.ocel_event_id = E1.ocel_id
